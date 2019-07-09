@@ -1,7 +1,5 @@
 = Greeter Command-line Application
 
-Hello!
-
 A simple application demonstrating the flexibility of a Gradle multi-project.
 
 == Installation
