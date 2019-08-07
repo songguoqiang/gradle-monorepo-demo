@@ -5,7 +5,7 @@ pipeline {
         stage("Checkout") {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'PerBuildTag'], [$class: 'PathRestriction', excludedRegions: '', includedRegions: '''greeter/.*
-                gretting-library/.*''']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_login', url: 'https://github.com/songguoqiang/gradle-monorepo-demo.git']]])
+greeting-library/.*''']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_login', url: 'https://github.com/songguoqiang/gradle-monorepo-demo.git']]])
             }
         }
         stage('Build') {
