@@ -2,7 +2,6 @@
 
 A simple application demonstrating the flexibility of a Gradle multi-project.
 
-Haha
 
 == Installation
 
