@@ -2,8 +2,6 @@
 
 A simple application demonstrating the flexibility of a Gradle multi-project.
 
-Haha!
-
 == Installation
 
 Unpack the ZIP or TAR file in a suitable location
