@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage("Checkout") {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'PerBuildTag'], [$class: 'PathRestriction', excludedRegions: '', includedRegions: 'docs/.*']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_login', url: 'https://github.com/songguoqiang/gradle-monorepo-demo.git']]])
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building Docs..'
