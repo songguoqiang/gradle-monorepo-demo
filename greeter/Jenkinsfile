@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        APPLICATION_NAME='greeter'
+    }
+
     stages {
 //         stage("Checkout") {
 //             steps {
@@ -27,7 +31,7 @@ pipeline {
 
      post {
        always {
-         publishHTML([reportDir: 'greeter/build/reports/tests/test', reportFiles: 'index.html', reportName: 'Greeter Test Report'])
+         publishHTML([reportDir: "${APPLICATION_NAME}/build/reports/tests/test", reportFiles: 'index.html', reportName: 'Greeter Test Report'])
        }
     }
 }
