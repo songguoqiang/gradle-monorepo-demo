@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing Greeter..'
+                sh "gradlew clean test"
             }
         }
         stage('Deploy') {
@@ -23,5 +23,11 @@ pipeline {
                 echo 'Deploying Greeter....'
             }
         }
+    }
+
+     post {
+       always {
+         publishHTML([reportDir: 'greeter/build/reports/tests/test', reportFiles: 'index.html', reportName: 'Greeter Test Report'])
+       }
     }
 }
