@@ -1,5 +1,10 @@
 plugins {
     id 'application' 
+    id 'jacoco'
+}
+
+test {
+    finalizedBy jacocoTestReport
 }
 
 mainClassName = 'greeter.Greeter'
